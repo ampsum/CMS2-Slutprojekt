@@ -1,0 +1,9 @@
+/* #bakery-form {
+  border: black 1px solid;
+} */
+#bakery-form>input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px orange solid;
+  box-shadow: none;
+}
