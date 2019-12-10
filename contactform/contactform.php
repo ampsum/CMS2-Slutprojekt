@@ -32,6 +32,7 @@ class ContactForm
     else {
         $form = '
               <form id="bakery-form" action="' . admin_url('admin-post.php') . '" method="post">
+                <label>Välj ärende: </label>
                 <select name="contact-type" >
               		<option value="kontakt">Kontakt</option>
               		<option value="reklamation">Reklamation</option>
@@ -39,13 +40,16 @@ class ContactForm
           	    </select>
                 <br>
                 <br>
-                <input type="text" name="name" placeholder="Förnamn Efternamn">
+                <label>Namn: </label>
+                <input type="text" name="name">
                 <br>
                 <br>
-                <input type="email" name="email" placeholder="namn@mail.se">
+                <label>Email: </label>
+                <input type="email" name="email"">
                 <br>
                 <br>
-                <textarea name="message" placeholder="Skriv ditt meddelande"></textarea>
+                <label>Meddelande: </label>
+                <textarea name="message"></textarea>
                 <br>
                 <br>
                 <input type="file" name="attachment" accept=".jpg, .jpeg, .png">

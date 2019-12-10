@@ -5,3 +5,80 @@ Author: Sara och Maija
 Template: storefront
 Version: 1.0
 */
+/*
+Färger:
+Gul: #ffd900
+Orange: #f2800d
+Brun: #492802
+*/
+/* menyer */
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Caveat|Solway&display=swap');
+
+.site-header .nav-menu {
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+.site-header .nav-menu a, .woocommerce-MyAccount-navigation li a {
+  color: #f2800d;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.site-header .nav-menu a:hover,
+.site-header .nav-menu .current_page_item a,
+.woocommerce-MyAccount-navigation li a:hover,
+.woocommerce-MyAccount-navigation .is-active a {
+  color: #ffd900;
+}
+
+/* ikoner */
+.woocommerce-tabs ul.tabs li.active a, .onsale, .wc-block-grid__product-onsale, .widget_search form::before, .widget_product_search form::before, a.remove::before, .widget_categories ul li::before, .widget_archive ul li::before, li::before, .widget_pages ul li::before, .woocommerce-breadcrumb a:first-of-type::before, .site-header-cart .cart-contents::after, .my_account_orders .button.view::after, .hentry .entry-content a:not(.button) {
+  color: #f2800d;
+}
+
+/* text */
+h1, h2, h3, h4, h5 {
+  font-family: 'Dancing Script', cursive;
+}
+
+p, th, td, label, .woocommerce-breadcrumb, .wc-block-grid__product-link {
+  font-family: 'Solway', serif;
+}
+
+body * {
+  color: #492802;
+}
+
+/* knappar */
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button, #payment .place-order .button, .hentry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link, .wc-proceed-to-checkout .button.checkout-button, button.alt, .button.alt {
+  background-color: #f2800d;
+  border: none;
+  border-radius: 0;
+  color: #492802;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .widget a.button:hover, #payment .place-order .button:hover, .hentry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link:hover, .wc-proceed-to-checkout .button.checkout-button:hover, button.alt:hover, .button.alt:hover {
+  background-color: #ffd900;
+  color: #492802;
+}
+
+/* sökfält */
+.site-search .widget_product_search form input[type="search"], .site-search .widget_product_search form input[type="text"], .widget_search form input[type="search"] {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border: 2px #492802 solid;
+}
+
+/* footer */
+.site-footer {
+  background-color: #492802;
+}
+
+.site-info, .site-footer a:not(.button) {
+  color: white;
+}
