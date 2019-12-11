@@ -1,9 +1,29 @@
-/* #bakery-form {
-  border: black 1px solid;
-} */
-#bakery-form>input {
+#bakery-form {
+  background-color: beige;
+  padding: 40px;
+}
+
+#bakery-form>input[type="text"], #bakery-form>input[type="email"] {
   background-color: transparent;
   border: none;
-  border-bottom: 1px orange solid;
+  border-bottom: 1px #f2800d dotted;
   box-shadow: none;
+}
+
+#bakery-form>textarea {
+  background-color: transparent;
+  border: 1px #f2800d dotted;
+  box-shadow: none;
+}
+
+#bakery-form>select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px #f2800d dotted;
+  padding-left: 20px;
+  text-align: center;
+}
+
+#bakery-form>input[type="submit"] {
+  margin-left: 25vw;
 }
