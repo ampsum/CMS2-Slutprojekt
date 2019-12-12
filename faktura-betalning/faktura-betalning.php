@@ -90,6 +90,7 @@
              $idnumber = get_post_meta( $order_id, '_additional_wooccm0', true );
 
              function isValid($num) {
+               $num = preg_replace("/[^0-9]/", "", $num);
                settype($num, 'string');
                $sumTable = array(
                array(0,1,2,3,4,5,6,7,8,9),
