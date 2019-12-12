@@ -54,14 +54,14 @@ body * {
 }
 
 /* knappar */
-button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button, #payment .place-order .button, .hentry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link, .wc-proceed-to-checkout .button.checkout-button, button.alt, .button.alt {
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button, #payment .place-order .button, .hentry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link, .wc-proceed-to-checkout .button.checkout-button, button.alt, .button.alt, .site-header-cart .widget_shopping_cart a.button, .added_to_cart {
   background-color: #f2800d;
   border: none;
   border-radius: 0;
   color: #492802;
 }
 
-button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .widget a.button:hover, #payment .place-order .button:hover, .hentry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link:hover, .wc-proceed-to-checkout .button.checkout-button:hover, button.alt:hover, .button.alt:hover {
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .widget a.button:hover, #payment .place-order .button:hover, .hentry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link:hover, .wc-proceed-to-checkout .button.checkout-button:hover, button.alt:hover, .button.alt:hover, .site-header-cart .widget_shopping_cart a.button:hover, .added_to_cart:hover {
   background-color: #ffd900;
   color: #492802;
 }

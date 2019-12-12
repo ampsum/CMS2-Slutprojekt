@@ -58,8 +58,6 @@
              ];
            }
 
-           //fält för personnummer vid betalningsmetod
-
             function payment_fields(){
               ?>
              <form class="" action="" method="post">
@@ -89,35 +87,37 @@
 
              $order = new WC_Order($order_id);
 
-             //skapa ett fält i frontend wc checkout som lägger till personnummer!
-            $idnumber = get_post_meta( $order_id, '_additional_wooccm0', true );
+             $idnumber = get_post_meta( $order_id, '_additional_wooccm0', true );
 
-               function isValid($num) {
-                   $num = preg_replace('/[^\d]/', '', $num);
-                   $sum = '';
+             function isValid($num) {
+               settype($num, 'string');
+               $sumTable = array(
+               array(0,1,2,3,4,5,6,7,8,9),
+               array(0,2,4,6,8,1,3,5,7,9));
+               $sum = 0;
+               $flip = 0;
+               for ($i = strlen($num) - 1; $i >= 0; $i--) {
+                 $sum += $sumTable[$flip++ & 0x1][$num[$i]];
+               }
+               return $sum % 10 === 0;
+            }
+            $response = isValid($idnumber);
 
-                   for ($i = strlen($num) - 1; $i >= 0; -- $i) {
-                       $sum .= $i & 1 ? $num[$i] : $num[$i] * 2;
-                   }
-                   return array_sum(str_split($sum)) % 10 === 0;
-               }
-               $response = isValid($idnumber);
-
-               if($response == true){
-                 $order->add_order_note(__("Betalningen lyckades"));
-                 $order->payment_complete();
-                 $woocommerce->cart->empty_cart();
-                 return [
-                   'result'   => 'success',
-                   'redirect' => $this->get_return_url( $order ),
-                 ];
-               }
-               else {
-                 $error = __("Ogiltigt personnummer. Formatet ska vara 10 siffror.");
-                 wc_add_notice( $error, 'error' );
-                 $order->add_order_note( 'Error: '. $error );
-               }
-           }
+            if($response == true){
+              $order->add_order_note(__("Betalningen lyckades"));
+              $order->payment_complete();
+              $woocommerce->cart->empty_cart();
+              return [
+               'result'   => 'success',
+               'redirect' => $this->get_return_url( $order ),
+              ];
+            }
+            else {
+               $error = __("Ogiltigt personnummer");
+               wc_add_notice( $error, 'error' );
+               $order->add_order_note( 'Error: '. $error );
+            }
+          }
 
          }
 
